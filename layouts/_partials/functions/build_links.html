@@ -30,7 +30,7 @@
 
 {{ $links := slice }}
 {{ $seen := newScratch }}
-{{ $seen.Set "set" (dict) }}
+
 
 {{/* 1) Author-provided links (array order) */}}
 {{ with $page.Params.links }}
@@ -51,9 +51,8 @@
     {{ $typeF := $type }}
     {{ $urlF := $url }}
     {{ $keyF := printf "%s::%s" $typeF $urlF }}
-    {{ if not ($seen.Get (printf "set.%s" $keyF)) }}
-      {{ if not ($seen.Get "set") }}{{ $seen.Set "set" (dict) }}{{ end }}
-      {{ $seen.SetInMap "set" $keyF true }}
+    {{ if not ($seen.Get $keyF) }}
+      {{ $seen.Set $keyF true }}
       {{ $links = $links | append (dict
           "type" $typeF
           "url" $urlF
@@ -74,9 +73,8 @@
       {{ $typeF := "project" }}
       {{ $urlF := .RelPermalink }}
       {{ $keyF := printf "%s::%s" $typeF $urlF }}
-      {{ if not ($seen.Get (printf "set.%s" $keyF)) }}
-        {{ if not ($seen.Get "set") }}{{ $seen.Set "set" (dict) }}{{ end }}
-      {{ $seen.SetInMap "set" $keyF true }}
+      {{ if not ($seen.Get $keyF) }}
+        {{ $seen.Set $keyF true }}
         {{ $links = $links | append (dict
             "type" $typeF
             "url" $urlF
@@ -99,9 +97,8 @@
         {{ $typeF := "slides" }}
         {{ $urlF := .RelPermalink }}
         {{ $keyF := printf "%s::%s" $typeF $urlF }}
-        {{ if not ($seen.Get (printf "set.%s" $keyF)) }}
-          {{ if not ($seen.Get "set") }}{{ $seen.Set "set" (dict) }}{{ end }}
-      {{ $seen.SetInMap "set" $keyF true }}
+        {{ if not ($seen.Get $keyF) }}
+          {{ $seen.Set $keyF true }}
           {{ $links = $links | append (dict
               "type" $typeF
               "url" $urlF
@@ -119,9 +116,8 @@
       {{ $typeF := "slides" }}
       {{ $urlF := .RelPermalink }}
       {{ $keyF := printf "%s::%s" $typeF $urlF }}
-      {{ if not ($seen.Get (printf "set.%s" $keyF)) }}
-        {{ if not ($seen.Get "set") }}{{ $seen.Set "set" (dict) }}{{ end }}
-      {{ $seen.SetInMap "set" $keyF true }}
+      {{ if not ($seen.Get $keyF) }}
+        {{ $seen.Set $keyF true }}
         {{ $links = $links | append (dict
             "type" $typeF
             "url" $urlF
@@ -142,9 +138,8 @@
     {{ $typeF := "pdf" }}
     {{ $urlF := .RelPermalink }}
     {{ $keyF := printf "%s::%s" $typeF $urlF }}
-    {{ if not ($seen.Get (printf "set.%s" $keyF)) }}
-      {{ if not ($seen.Get "set") }}{{ $seen.Set "set" (dict) }}{{ end }}
-      {{ $seen.SetInMap "set" $keyF true }}
+    {{ if not ($seen.Get $keyF) }}
+      {{ $seen.Set $keyF true }}
       {{ $links = $links | append (dict
           "type" $typeF
           "url" $urlF
@@ -159,9 +154,8 @@
   {{ $typeF := "bibtex" }}
   {{ $urlF := .RelPermalink }}
   {{ $keyF := printf "%s::%s" $typeF $urlF }}
-  {{ if not ($seen.Get (printf "set.%s" $keyF)) }}
-    {{ if not ($seen.Get "set") }}{{ $seen.Set "set" (dict) }}{{ end }}
-      {{ $seen.SetInMap "set" $keyF true }}
+  {{ if not ($seen.Get $keyF) }}
+    {{ $seen.Set $keyF true }}
     {{ $links = $links | append (dict
         "type" $typeF
         "url" $urlF
@@ -181,9 +175,8 @@
         {{ $typeF := index $der "type" }}
         {{ $urlF := replace (index $der "url_template") "{id}" (printf "%v" $val) }}
         {{ $keyF := printf "%s::%s" $typeF $urlF }}
-        {{ if not ($seen.Get (printf "set.%s" $keyF)) }}
-          {{ if not ($seen.Get "set") }}{{ $seen.Set "set" (dict) }}{{ end }}
-      {{ $seen.SetInMap "set" $keyF true }}
+        {{ if not ($seen.Get $keyF) }}
+          {{ $seen.Set $keyF true }}
           {{ $links = $links | append (dict
               "type" $typeF
               "url" $urlF
@@ -204,9 +197,8 @@
   {{ $typeF := "site" }}
   {{ $urlF := . }}
   {{ $keyF := printf "%s::%s" $typeF $urlF }}
-  {{ if not ($seen.Get (printf "set.%s" $keyF)) }}
-    {{ if not ($seen.Get "set") }}{{ $seen.Set "set" (dict) }}{{ end }}
-      {{ $seen.SetInMap "set" $keyF true }}
+  {{ if not ($seen.Get $keyF) }}
+    {{ $seen.Set $keyF true }}
     {{ $links = $links | append (dict
         "type" $typeF
         "url" $urlF
@@ -224,9 +216,8 @@
     {{ $typeF := index $der "type" }}
     {{ $urlF := replace (index $der "url_template") "{id}" (printf "%v" $page.Params.doi) }}
     {{ $keyF := printf "%s::%s" $typeF $urlF }}
-    {{ if not ($seen.Get (printf "set.%s" $keyF)) }}
-      {{ if not ($seen.Get "set") }}{{ $seen.Set "set" (dict) }}{{ end }}
-      {{ $seen.SetInMap "set" $keyF true }}
+    {{ if not ($seen.Get $keyF) }}
+      {{ $seen.Set $keyF true }}
       {{ $links = $links | append (dict
           "type" $typeF
           "url" $urlF
@@ -239,9 +230,8 @@
     {{ $typeF := "doi" }}
     {{ $urlF := printf "https://doi.org/%v" $page.Params.doi }}
     {{ $keyF := printf "%s::%s" $typeF $urlF }}
-    {{ if not ($seen.Get (printf "set.%s" $keyF)) }}
-      {{ if not ($seen.Get "set") }}{{ $seen.Set "set" (dict) }}{{ end }}
-      {{ $seen.SetInMap "set" $keyF true }}
+    {{ if not ($seen.Get $keyF) }}
+      {{ $seen.Set $keyF true }}
       {{ $links = $links | append (dict
           "type" $typeF
           "url" $urlF
@@ -277,9 +267,8 @@
     {{ $typeF := $legacyType }}
     {{ $urlF := $u }}
     {{ $keyF := printf "%s::%s" $typeF $urlF }}
-    {{ if not ($seen.Get (printf "set.%s" $keyF)) }}
-      {{ if not ($seen.Get "set") }}{{ $seen.Set "set" (dict) }}{{ end }}
-      {{ $seen.SetInMap "set" $keyF true }}
+    {{ if not ($seen.Get $keyF) }}
+      {{ $seen.Set $keyF true }}
       {{ $links = $links | append (dict
           "type" $typeF
           "url" $urlF
@@ -292,4 +281,5 @@
 {{ end }}
 
 {{- return $links -}}
+
 
