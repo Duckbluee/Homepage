@@ -17,8 +17,7 @@ tags:
   - Molecular Property Prediction
   - Graph Contrastive Learning
 featured: true
-projects:
-  - molecular-property-prediction
+projects: []
 ---
 
 Published in IEEE Journal of Biomedical and Health Informatics, 2024.

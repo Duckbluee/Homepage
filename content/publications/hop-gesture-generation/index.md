@@ -19,8 +19,7 @@ tags:
   - Gesture Generation
   - Embodied AI
 featured: true
-projects:
-  - gesture-generation
+projects: []
 ---
 
 Published at CVPR 2025.

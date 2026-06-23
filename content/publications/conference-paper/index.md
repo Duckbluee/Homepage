@@ -17,8 +17,7 @@ tags:
   - Physics-Informed Learning
   - Scientific Machine Learning
 featured: true
-projects:
-  - graph-navier-stokes
+projects: []
 ---
 
 Accepted to KDD 2026.
