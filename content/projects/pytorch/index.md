@@ -1,15 +1,14 @@
 ---
-title: PyTorch
-date: 2023-10-26
-links:
-  - type: site
-    url: https://github.com/pytorch/pytorch
+title: Multimodal Representation Learning for Human Gesture Generation
+date: 2025-06-01
 tags:
-  - Hugo
-  - HugoBlox
-  - Markdown
+  - Multimodal Learning
+  - Embodied AI
+  - Gesture Generation
 ---
 
-PyTorch is a Python package that provides tensor computation (like NumPy) with strong GPU acceleration.
+Designing a multimodal learning framework that fuses text, audio, and motion signals into unified entangled representations for virtual human skeleton generation.
+
+The project aims to generate gestures that synchronize with audio and exhibit natural realism, supporting embodied intelligence and virtual human interaction.
 
 <!--more-->

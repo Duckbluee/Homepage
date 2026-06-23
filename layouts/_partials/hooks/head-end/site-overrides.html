@@ -1,0 +1,82 @@
+<style>
+  #section-resume-biography-3 h1 {
+    font-size: clamp(2rem, 3vw, 2.75rem);
+    white-space: pre-line;
+    line-height: 1.08;
+  }
+
+  #section-resume-biography-3 .md\:col-span-4 .space-y-3 {
+    max-width: 100%;
+  }
+
+  #section-resume-biography-3 .md\:col-span-4 .space-y-3 > p.text-2xl {
+    font-size: 1.35rem;
+    line-height: 1.35;
+    white-space: pre-line;
+  }
+
+  #section-resume-biography-3 .md\:col-span-4 .space-y-3 > p.text-lg {
+    margin-top: 0.65rem;
+  }
+
+  #section-resume-biography-3 .md\:col-span-8 .grid {
+    display: block;
+  }
+
+  #section-resume-biography-3 .md\:col-span-8 .grid > .group {
+    width: 100%;
+    min-height: unset;
+    border-radius: 0.75rem;
+    padding: 1.25rem 1.5rem;
+  }
+
+  #section-resume-biography-3 .md\:col-span-8 .grid > .group .flex.gap-4 {
+    align-items: center;
+  }
+
+  #section-resume-biography-3 .md\:col-span-8 .grid > .group p.text-xl {
+    font-size: 1.25rem;
+    line-height: 1.35;
+  }
+
+  @media (max-width: 640px) {
+    #section-resume-biography-3 h1 {
+      font-size: 1.95rem;
+      white-space: pre-line;
+    }
+  }
+</style>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const educationDates = document.querySelectorAll(
+      '#section-resume-biography-3 .md\\:col-span-8 .grid .group .text-gray-500'
+    );
+    const nameHeading = document.querySelector('#section-resume-biography-3 h1');
+
+    educationDates.forEach((node) => {
+      const parts = node.innerHTML
+        .split(/<br\s*\/?>/i)
+        .map((part) => part.trim())
+        .filter(Boolean);
+
+      const shortParts = parts.map((part) => {
+        const match = part.match(/^(\d{4})-(\d{2})-\d{2}$/);
+        return match ? match[1] + '-' + match[2] : part;
+      });
+
+      if (parts.length > 1) {
+        node.textContent = shortParts.join(' - ');
+      } else if (shortParts.length === 1) {
+        node.textContent = shortParts[0];
+      }
+    });
+
+    if (nameHeading) {
+      const lines = nameHeading.innerHTML.split(/<br\s*\/?>/i);
+      if (lines.length >= 3) {
+        lines[2] = '<span style="display:inline-block; margin-top:0.42em;">' + lines[2].trim() + '</span>';
+        nameHeading.innerHTML = lines.join('<br>');
+      }
+    }
+  });
+</script>

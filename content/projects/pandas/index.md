@@ -1,15 +1,14 @@
 ---
-title: Pandas
-date: 2023-10-26
-links:
-  - type: site
-    url: https://github.com/pandas-dev/pandas
+title: Evolutionary Tree Generation from Taxonomy-Aware Citation Graphs
+date: 2025-06-01
 tags:
-  - Hugo
-  - HugoBlox
-  - Markdown
+  - Graph Data Mining
+  - Knowledge Evolution
+  - Citation Graphs
 ---
 
-Flexible and powerful data analysis / manipulation library for Python, providing labeled data structures.
+Developing graph-based methods for evolutionary tree generation from citation graphs, modeling the evolution and development of research fields through hierarchical structures and temporal dynamics.
+
+This work is supervised by Prof. Liang Zhao at Emory University and explores an emerging direction at the intersection of graph mining, taxonomy-aware learning, and scientific knowledge evolution.
 
 <!--more-->
