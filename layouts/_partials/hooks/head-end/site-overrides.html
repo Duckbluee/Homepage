@@ -19,6 +19,31 @@
     margin-top: 0.65rem;
   }
 
+  #section-resume-biography-3 .profile-contact-email {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 0.9rem;
+    color: rgb(55 65 81);
+    font-size: 0.98rem;
+    font-weight: 600;
+    line-height: 1.4;
+    text-decoration: none;
+    word-break: break-word;
+  }
+
+  #section-resume-biography-3 .profile-contact-email:hover {
+    color: rgb(37 99 235);
+  }
+
+  .dark #section-resume-biography-3 .profile-contact-email {
+    color: rgb(229 231 235);
+  }
+
+  .dark #section-resume-biography-3 .profile-contact-email:hover {
+    color: rgb(96 165 250);
+  }
+
   #section-resume-biography-3 .md\:col-span-8 .grid {
     display: block;
   }
@@ -52,6 +77,8 @@
       '#section-resume-biography-3 .md\\:col-span-8 .grid .group .text-gray-500'
     );
     const nameHeading = document.querySelector('#section-resume-biography-3 h1');
+    const contactRow = document.querySelector('#section-resume-biography-3 .md\\:col-span-4 .flex.flex-wrap.justify-center.gap-4');
+    const emailLink = contactRow ? contactRow.querySelector('a[href^="mailto:"]') : null;
 
     educationDates.forEach((node) => {
       const parts = node.innerHTML
@@ -77,6 +104,14 @@
         lines[2] = '<span style="display:inline-block; margin-top:0.42em;">' + lines[2].trim() + '</span>';
         nameHeading.innerHTML = lines.join('<br>');
       }
+    }
+
+    if (contactRow && emailLink && !document.querySelector('#section-resume-biography-3 .profile-contact-email')) {
+      const visibleEmail = document.createElement('a');
+      visibleEmail.className = 'profile-contact-email';
+      visibleEmail.href = emailLink.href;
+      visibleEmail.textContent = emailLink.href.replace(/^mailto:/i, '');
+      contactRow.insertAdjacentElement('afterend', visibleEmail);
     }
   });
 </script>
