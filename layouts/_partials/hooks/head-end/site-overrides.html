@@ -21,27 +21,65 @@
 
   #section-resume-biography-3 .profile-contact-email {
     display: inline-flex;
+    flex-direction: column;
     align-items: center;
-    gap: 0.5rem;
-    margin-top: 0.9rem;
-    color: rgb(55 65 81);
-    font-size: 0.98rem;
-    font-weight: 600;
-    line-height: 1.4;
+    gap: 0.3rem;
+    margin-top: 1rem;
+    padding: 0.85rem 1rem;
+    border: 1px solid rgb(229 231 235);
+    border-radius: 0.9rem;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
+    color: rgb(31 41 55);
     text-decoration: none;
     word-break: break-word;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
   }
 
   #section-resume-biography-3 .profile-contact-email:hover {
-    color: rgb(37 99 235);
+    color: rgb(30 64 175);
+    border-color: rgb(147 197 253);
+    box-shadow: 0 14px 30px rgba(37, 99, 235, 0.14);
+    transform: translateY(-1px);
   }
 
   .dark #section-resume-biography-3 .profile-contact-email {
-    color: rgb(229 231 235);
+    background: rgba(31, 41, 55, 0.92);
+    border-color: rgb(75 85 99);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+    color: rgb(243 244 246);
   }
 
   .dark #section-resume-biography-3 .profile-contact-email:hover {
-    color: rgb(96 165 250);
+    color: rgb(191 219 254);
+    border-color: rgb(96 165 250);
+  }
+
+  #section-resume-biography-3 .profile-contact-email-label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgb(107 114 128);
+  }
+
+  #section-resume-biography-3 .profile-contact-email-line {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.98rem;
+    font-weight: 600;
+    line-height: 1.4;
+  }
+
+  #section-resume-biography-3 .profile-contact-email-icon {
+    width: 1rem;
+    height: 1rem;
+    flex-shrink: 0;
+  }
+
+  .dark #section-resume-biography-3 .profile-contact-email-label {
+    color: rgb(156 163 175);
   }
 
   #section-resume-biography-3 .md\:col-span-8 .grid {
@@ -110,7 +148,15 @@
       const visibleEmail = document.createElement('a');
       visibleEmail.className = 'profile-contact-email';
       visibleEmail.href = emailLink.href;
-      visibleEmail.textContent = emailLink.href.replace(/^mailto:/i, '');
+      visibleEmail.innerHTML =
+        '<span class="profile-contact-email-label">Email</span>' +
+        '<span class="profile-contact-email-line">' +
+        '<svg class="profile-contact-email-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' +
+        '<path d="M4 6h16v12H4z"></path>' +
+        '<path d="m4 7 8 6 8-6"></path>' +
+        '</svg>' +
+        '<span>' + emailLink.href.replace(/^mailto:/i, '') + '</span>' +
+        '</span>';
       contactRow.insertAdjacentElement('afterend', visibleEmail);
     }
   });
