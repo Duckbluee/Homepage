@@ -1,3 +1,35 @@
+<script type="application/ld+json">
+  {{- $profileImage := resources.Get "media/authors/me.png" -}}
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Alfred (Zexing) Zhao",
+    "alternateName": ["Zexing Zhao", "\u8d75\u6cfd\u884c"],
+    "description": "Academic website of Alfred (Zexing) Zhao, an M.S. student in Computational Science and Engineering at Georgia Tech working across AI for Science, computational physics, embodied intelligence, and physics-informed learning.",
+    "url": "{{ site.Home.Permalink }}",
+    "image": "{{ with $profileImage }}{{ .Permalink }}{{ end }}",
+    "email": "mailto:Alfred.zhao@gatech.edu",
+    "jobTitle": "M.S. Student in Computational Science and Engineering",
+    "affiliation": {
+      "@type": "CollegeOrUniversity",
+      "name": "Georgia Institute of Technology",
+      "url": "https://www.gatech.edu/"
+    },
+    "knowsAbout": [
+      "AI for Science",
+      "Computational Physics",
+      "Embodied Intelligence",
+      "Physics-Informed Learning",
+      "Scientific Machine Learning",
+      "Graph Learning"
+    ],
+    "sameAs": [
+      "https://github.com/Duckbluee",
+      "https://scholar.google.com.hk/citations?user=k5T8OzsAAAAJ&hl=zh-CN",
+      "https://www.linkedin.com/in/zexing-zhao-b1426a389/"
+    ]
+  }
+</script>
 <style>
   #section-resume-biography-3 h1 {
     font-size: clamp(2rem, 3vw, 2.75rem);

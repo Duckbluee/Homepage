@@ -21,7 +21,7 @@ hugoblox:
     # Short tagline displayed on your site
     tagline: "MS Computational Science and Engineering (Mechanical Engineering)"
     # Site meta description for search engines and social sharing
-    description: "Personal academic website of Zexing Zhao, MS student in Computational Science and Engineering at Georgia Tech."
+    description: "Official academic website of Alfred (Zexing) Zhao, an M.S. student in Computational Science and Engineering at Georgia Tech working across AI for Science, computational physics, embodied intelligence, and physics-informed learning."
     # Social accounts (used for meta tags like Twitter Cards)
     social:
       twitter: "" # Twitter/X handle for Twitter Cards (without @)
@@ -127,7 +127,7 @@ hugoblox:
   # ────────────────────────────────────────────────────────────────────────────
   seo:
     # Browser tab title override (defaults to identity.name if not set)
-    title: ""
+    title: "Alfred (Zexing) Zhao | Georgia Tech"
     # For local_business identity type only
     location:
       address:
@@ -217,7 +217,7 @@ hugoblox:
   # Search engine site verification codes
   # ────────────────────────────────────────────────────────────────────────────
   verification:
-    google: ""
+    google: "gh3NmYjhHDuQMlLvS2yKFec6fTmKg8ns8AG5SScEnII"
     bing: ""
     baidu: ""
     yandex: ""
