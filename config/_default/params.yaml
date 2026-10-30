@@ -21,7 +21,7 @@ hugoblox:
     # Short tagline displayed on your site
     tagline: "MS Computational Science and Engineering (Mechanical Engineering)"
     # Site meta description for search engines and social sharing
-    description: "Official academic website of Alfred (Zexing) Zhao, an M.S. student in Computational Science and Engineering at Georgia Tech working across AI for Science, computational physics, embodied intelligence, and physics-informed learning."
+    description: "Official academic website of Alfred (Zexing) Zhao, an M.S. student in Computational Science and Engineering at Georgia Tech working across scientific machine learning, physics-informed learning, and computational physics."
     # Social accounts (used for meta tags like Twitter Cards)
     social:
       twitter: "" # Twitter/X handle for Twitter Cards (without @)

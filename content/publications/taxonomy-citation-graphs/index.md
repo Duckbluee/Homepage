@@ -12,7 +12,13 @@ publication:
   short_name: "EMNLP"
 peer_reviewed: true
 summary: A method for automatically generating evolution trees from citation graphs.
-links: []
+links:
+  - type: site
+    url: https://arxiv.org/abs/2609.09561
+    label: Website
+    contexts:
+      - list
+      - page
 tags:
   - Citation Graphs
   - Scientific Knowledge Discovery
